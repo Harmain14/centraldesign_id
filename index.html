@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Penjualan Laptop</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Jual Beli Laptop</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Nota Pembelian</a></li>
+						<li class="nav__item"><a href="#work" class="nav__link">Daftar Harga</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main" >
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hai...<br>Terimakasih sudah <br> membeli <span class="home__title-color"> Laptop</span><br>di Kami</h1>
+
+                    <a href="#" class="button">Tentang Kami</a>
+                </div>
+
+                <div class="home__social">
+
+                </div>
+
+                <div class="home__img">    
+                    <img src="img/perfil.png" alt="">
+                </div>
+            </section>
+		<!--===== JS =====-->
+		<script type="text/javascript">
+			function hitungtotal(){
+
+			var nama = (document.form.inama.value);
+			var tujuan = (document.form.itujuan.value);
+			var jumlahpaket = parseFloat (document.form.ijumlah.value);
+			var ht = 0.0 ;
+			var sub = 0.0;
+			var diskon = 0.0;
+			var total = 0.0;
+			if (tujuan == "lenovo1") {
+
+				ht = 16199000;
+			}
+			else if(tujuan == "hp")
+			{
+				ht = 25780000;
+			}
+			else
+			{
+				ht = 8899000 ;
+			}
+
+			sub = jumlahpaket*ht;
+
+			if (document.form.imamber.checked == true) 
+			{
+				diskon = 0.10 * sub;
+			}
+			else
+			{
+				diskon=0.0;
+			}
+			total = sub - diskon;
+			document.form.otiket.value=eval(ht);
+			document.form.osub.value=eval(sub);
+			document.form.odiskon.value=eval(diskon);
+			document.form.ototal.value=eval(total);
+			}
+
+		</script>
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact" style="background-image:url('img/bg.jpg');">
+                <h2 class="section-title">Nota Pembelian</h2>
+
+                <div class="contact__container bd-grid">
+				<form name="form" onchange="hitungtotal()">
+				<form action="" class="contact__form">
+				<table>
+					<tr>
+						<td>
+						<font color="#E6E6E6">.............................................................................................</font>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Nama</td>
+						<td><input type="text" name="inama" size="25" placeholder="Nama Pembeli.."> </td>
+					</tr>		
+						<tr>
+							<td>
+								Nama Barang
+							</td>
+							<td>
+								<select name="itujuan">
+									<option value="lenovo1">LENOVO IdeaPad 5 14ITL05</option>
+									<option value="hp">HP Business EliteBook X360 1020 G2</option>
+									<option value="asus">ASUS VivoBook M413IA-VIPS351</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Jumlah
+							</td>
+							<td>
+								<input type="text" size="15" name="ijumlah" placeholder="Jumlah yang dibeli..">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Kupon
+							</td>
+							<td>
+								<input type="checkbox" name="imamber">Ya
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Harga Laptop
+							</td>
+							<td>
+								<input type="text" size="10" name="otiket">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Sub Total
+							</td>
+							<td>
+								<input type="text" size="10" name="osub">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Diskon
+							</td>
+							<td>
+								<input type="text" size="10" name="odiskon">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Total Bayar
+							</td>
+							<td>
+								<input type="text" name="ototal" size=10"">
+								
+							</td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>
+							
+								<input type="button" value="Hitung" class="button" Onclick="hitungtotal()">
+								<input type="reset" value="Ulangi" class="button">
+							</td>
+						</tr>
+				</table>
+				</form>
+                </div>
+            </section>
+        </main>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work" >
+                <h2 class="section-title">Daftar Harga</h2>
+
+                <div class="work__container bd-grid">
+                    <div class="work__img">
+                        <img src="img/laptop1.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/laptop2.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/laptop3.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/laptop4.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/laptop5.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/laptop6.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Abdullah Harmain</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p>&#169; 2021 copyright all right reserved</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="js/main.js"></script>
+    </body>
+</html>
